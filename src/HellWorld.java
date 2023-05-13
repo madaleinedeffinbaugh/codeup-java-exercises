@@ -24,7 +24,7 @@ public class HellWorld {
         // 4. Declare a long variable named myNumber, but do not assign anything to it. Next try to print out myNumber to the console. What happens?
             // long myNumber;
             // System.out.println(myNumber);
-            // -it creates an error saying that it cant be used before assignment
+            // -it creates an error saying that it cant be used before initialization
 
         // 5. Change your code to assign the value 3.14 to myNumber. What do you notice?
             // myNumber = 3.14;
@@ -103,10 +103,9 @@ public class HellWorld {
             int max = 2147483647;
             System.out.println(max);
             max++;
-            max = max + 20;
             System.out.println(max);
             // if you assign it a value greater than its max it will give you an error
-            // if you increment past, instead of throwing an error, it wraps around to the start since an int cant hold a value greater than its max
+            // if you increment past, instead of throwing an error, it wraps around to the start (-2147483648) since an int cant hold a value greater than its max
 
 
 
