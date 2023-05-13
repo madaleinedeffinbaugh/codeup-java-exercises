@@ -52,14 +52,50 @@ public class HellWorld {
         //-not a statement error
 
         // 12. Object is the most generic type in Java. You can assign any value to a variable of type Object. What do you think will happen when the following code is run?
+            //-i think it will error out because you are trying to type cast a object of string value to an integer
 //        String theNumberThree = "three";
 //        Object o = theNumberThree;
 //        int three = (int) o;
 
         // Copy and paste the code above and then run it. Does the result match with your expectation?
+            //-yup
 
         // How is the above example different from the code block below?
 //        int three = (int) "three";
+            // -its really not that different, it just takes out the redundancy of assigning it to a String and then to an Object - all to come to the same end result of a type error 🤷🏻‍️
+
+        // What are the two different types of errors we are observing?
+            // one error is failure to convert to class Integer and the other failure to convert to type int
+
+        // 13. Rewrite the following expressions using the relevant shorthand assignment operators:
+            // int x = 4;
+            // x = x + 5;
+//            mine:
+//            int x = 4 + 5;
+
+            // int x = 3;
+            // int y = 4;
+            // y = y * x;
+//            mine:
+//            int y = 4 * 3;
+
+            // int x = 10;
+            // int y = 2;
+            // x = x / y;
+            // y = y - x;
+//            mine:
+//            int x = 10 / 2;
+//            int y = 2 - (-10);
+
+            // 14. What happens if you assign a value to a numerical variable that is larger (or smaller) than the type can hold? What happens if you increment a numeric variable past the type's capacity?
+            int max = 2147483647;
+            System.out.println(max);
+            max++;
+            max = max + 20;
+            System.out.println(max);
+            //instead of throwing an error, it wraps around to the start since an int cant hold a value greater than its max
+
+
 
 
 
