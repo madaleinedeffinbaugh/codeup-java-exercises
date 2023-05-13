@@ -6,27 +6,33 @@ public class HellWorld {
         int myFavoriteNumber = 7;
         System.out.println(myFavoriteNumber);
 
-        //Create a String variable named myString and assign a string value to it, then print the variable out to the console.
+        // 1. Create a String variable named myString and assign a string value to it, then print the variable out to the console.
         String myString = "Dis a string";
         System.out.println(myString);
 
-        //Change your code to assign a character value to myString. What do you notice?
+        // 2. Change your code to assign a character value to myString. What do you notice?
+            //-it created an error
+
+        // 3. Change your code to assign the value 3.14159 to myString. What happens?
+            //-it created an error
+
+        // 4. Declare a long variable named myNumber, but do not assign anything to it. Next try to print out myNumber to the console. What happens?
+        long myNumber;
+        System.out.println(3.14);
+        //-it creates an error saying that it cant be used before assignment
+
+        // 5. Change your code to assign the value 3.14 to myNumber. What do you notice?
+            //-the error goes away
+
+        // 6. Change your code to assign the value 123L (Note the 'L' at the end) to myNumber.
         //
-        //Change your code to assign the value 3.14159 to myString. What happens?
+        // 7. Change your code to assign the value 123 to myNumber.
         //
-        //Declare an long variable named myNumber, but do not assign anything to it. Next try to print out myNumber to the console. What happens?
+        // 8. Why does assigning the value 3.14 to a variable declared as a long not compile, but assigning an integer value does?
         //
-        //Change your code to assign the value 3.14 to myNumber. What do you notice?
+        // 9. Change your code to declare myNumber as a float. Assign the value 3.14 to it. What happens? What are two ways we could fix this?
         //
-        //Change your code to assign the value 123L (Note the 'L' at the end) to myNumber.
-        //
-        //Change your code to assign the value 123 to myNumber.
-        //
-        //Why does assigning the value 3.14 to a variable declared as a long not compile, but assigning an integer value does?
-        //
-        //Change your code to declare myNumber as a float. Assign the value 3.14 to it. What happens? What are two ways we could fix this?
-        //
-        //Copy and paste the following code blocks one at a time and execute them
+        // 10. Copy and paste the following code blocks one at a time and execute them
 
 
 
