@@ -7,7 +7,9 @@ public class HellWorld {
         System.out.println(myFavoriteNumber);
 
         //Create a String variable named myString and assign a string value to it, then print the variable out to the console.
-        //
+        String myString = "Dis a string";
+        System.out.println(myString);
+
         //Change your code to assign a character value to myString. What do you notice?
         //
         //Change your code to assign the value 3.14159 to myString. What happens?
