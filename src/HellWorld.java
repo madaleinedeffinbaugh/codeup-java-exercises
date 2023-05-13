@@ -36,6 +36,30 @@ public class HellWorld {
             // -it errors, add f at the end or change it to a double
 
         // 10. Copy and paste the following code blocks one at a time and execute them
+//        int x = 5;
+//        System.out.println(x++);
+//        System.out.println(x);
+//
+//        int x = 5;
+//        System.out.println(++x);
+//        System.out.println(x);
+
+        // What is the difference between the above code blocks? Explain why the code outputs what it does.
+            //the top one prints the value and then increments it, the bottom one increments the value then prints it. this is because that is how ++ works with where it is placed
+
+        // 11. Try to create a variable named class. What happens?
+//        String class = "test";
+        //-not a statement error
+
+        // 12. Object is the most generic type in Java. You can assign any value to a variable of type Object. What do you think will happen when the following code is run?
+//        String theNumberThree = "three";
+//        Object o = theNumberThree;
+//        int three = (int) o;
+
+        // Copy and paste the code above and then run it. Does the result match with your expectation?
+
+        // How is the above example different from the code block below?
+//        int three = (int) "three";
 
 
 
