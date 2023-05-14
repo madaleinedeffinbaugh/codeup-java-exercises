@@ -12,14 +12,20 @@ public class ConsoleExercises {
             //getting int from user
             System.out.println("Please enter an integer :)");
             int usersInt = scanner.nextInt();
-            System.out.printf("Your integer: %d", usersInt);
+            System.out.printf("Your integer: %d%n", usersInt);
 
             //getting three words from user
             System.out.println("Please enter three different words");
             String wordOne = scanner.next();
             String wordTwo = scanner.next();
             String wordThree = scanner.next();
-            System.out.printf("one- %s, two- %s, three- %s", wordOne, wordTwo, wordThree);
+            System.out.printf("Your words: %s, %s, %s%n", wordOne, wordTwo, wordThree);
+
+            //getting sentence from user
+            System.out.println("Please enter a sentence");
+            scanner.nextLine();
+            String userSentence = scanner.nextLine();
+            System.out.printf("Your sentence: \n%s", userSentence);
 
         }
         catch(InputMismatchException e) {
