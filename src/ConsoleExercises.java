@@ -45,6 +45,15 @@ public class ConsoleExercises {
             double length = Double.parseDouble(scanner.nextLine());
             System.out.println("Please enter the width of the room: ");
             double width = Double.parseDouble(scanner.nextLine());
+
+            // calculating result
+            // area = length * width
+            double area = length*width;
+            System.out.printf("The area if the room is %.2f%n", area);
+
+            // perimeter = length*2 + width*2
+            double perimeter = (length*2) + (width*2);
+            System.out.printf("The perimeter if the room is %.2f", perimeter);
         }
         catch(NumberFormatException e) {
             System.out.println("Value entered was not correct.");
