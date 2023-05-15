@@ -56,17 +56,44 @@ public class ControlFlowExercises {
 
         //3. Display a table of powers
         Scanner scanner = new Scanner(System.in);
-        System.out.print("What number would you like to go up to? ");
-        int userNumber = scanner.nextInt();
-        System.out.println("\nHere is your table!\n");
-        System.out.printf("%-8s | %-8s | %-8s %n", "number", "squared", "cubed");
-        System.out.printf("%-8s | %-8s | %-8s %n", "------", "-------", "-----");
-        for(int i = 1; i <= userNumber; i++) {
-            System.out.printf("%-8d | %-8d | %-8d %n", i, i*i, i*i*i);
-        }
+//        System.out.print("What number would you like to go up to? ");
+//        int userNumber = scanner.nextInt();
+//        System.out.println("\nHere is your table!\n");
+//        System.out.printf("%-8s | %-8s | %-8s %n", "number", "squared", "cubed");
+//        System.out.printf("%-8s | %-8s | %-8s %n", "------", "-------", "-----");
+//        for(int i = 1; i <= userNumber; i++) {
+//            System.out.printf("%-8d | %-8d | %-8d %n", i, i*i, i*i*i);
+//        }
+
+        // 4. Convert given number grades into letter grades
+        String userAnswer;
+
+        do {
+            int userGrade = 0;
+            String letterGrade;
+            do {
+                System.out.println("\nEnter a grade between 1-100:");
+                userGrade = scanner.nextInt();
+            } while ((userGrade < 1) || (userGrade > 100));
+
+            if (userGrade >= 88) {
+                letterGrade = "A";
+            } else if (userGrade >= 80) {
+                letterGrade = "B";
+            } else if (userGrade >= 67) {
+                letterGrade = "C";
+            } else if (userGrade >= 60) {
+                letterGrade = "D";
+            } else {
+                letterGrade = "F";
+            }
+
+            System.out.printf("Your grade of %d = %s", userGrade, letterGrade);
 
 
-
+            System.out.println("\n\nDo you wish to input another grade? \nHit y and enter to continue. \nType anything else and hit enter to cancel.");
+            userAnswer = scanner.next();
+        } while (userAnswer.equals("y"));
 
 
 
