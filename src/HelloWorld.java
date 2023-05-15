@@ -1,4 +1,4 @@
-public class HellWorld {
+public class HelloWorld {
     public static void main(String[] args) {
         // EXERCISE 1
         System.out.print("Hello");
@@ -97,6 +97,7 @@ public class HellWorld {
             //mine:
             // x /= y;
             // y -= x;
+
 
 
             // 14. What happens if you assign a value to a numerical variable that is larger (or smaller) than the type can hold? What happens if you increment a numeric variable past the type's capacity?
