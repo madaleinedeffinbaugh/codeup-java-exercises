@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
         //Loop Basics
@@ -39,17 +41,34 @@ public class ControlFlowExercises {
 //        }
 
         // 2. Fizzbuzz
-        for(int i = 1; i <= 100; i++) {
-            if(i % 3 == 0 && i % 5== 0) {
-                System.out.println("FizzBuzz");
-            } else if(i % 3 == 0) {
-                System.out.println("Fizz");
-            } else if(i % 5 == 0) {
-                System.out.println("Buzz");
-            }
-            else {
-                System.out.println(i);
-            }
+//        for(int i = 1; i <= 100; i++) {
+//            if(i % 3 == 0 && i % 5== 0) {
+//                System.out.println("FizzBuzz");
+//            } else if(i % 3 == 0) {
+//                System.out.println("Fizz");
+//            } else if(i % 5 == 0) {
+//                System.out.println("Buzz");
+//            }
+//            else {
+//                System.out.println(i);
+//            }
+//        }
+
+        //3. Display a table of powers
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What number would you like to go up to? ");
+        int userNumber = scanner.nextInt();
+        System.out.println("\nHere is your table!\n");
+        System.out.printf("%-8s | %-8s | %-8s %n", "number", "squared", "cubed");
+        System.out.printf("%-8s | %-8s | %-8s %n", "------", "-------", "-----");
+        for(int i = 1; i <= userNumber; i++) {
+            System.out.printf("%-8d | %-8d | %-8d %n", i, i*i, i*i*i);
         }
+
+
+
+
+
+
     }
 }
