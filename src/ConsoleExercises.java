@@ -23,7 +23,7 @@ public class ConsoleExercises {
             String wordOne = scanner.next();
             String wordTwo = scanner.next();
             String wordThree = scanner.next();
-            System.out.printf("Your words: %s, %s, %s%n", wordOne, wordTwo, wordThree);
+            System.out.printf("Your words: %n%s%n%s%n%s%n", wordOne, wordTwo, wordThree);
 
             //getting sentence from user
             System.out.println("Please enter a sentence");
