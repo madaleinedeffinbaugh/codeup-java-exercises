@@ -38,6 +38,8 @@ public class ConsoleExercises {
             double length = scanner.nextDouble();
             System.out.println("Please enter the width of the room: ");
             double width = scanner.nextDouble();
+            System.out.println("Please enter the height of the room: ");
+            double height = scanner.nextDouble();
 
             // calculating results
             // area = length * width
@@ -46,7 +48,12 @@ public class ConsoleExercises {
 
             // perimeter = length*2 + width*2
             double perimeter = (length*2) + (width*2);
-            System.out.printf("The perimeter if the room is %.2f", perimeter);
+            System.out.printf("The perimeter if the room is %.2f%n", perimeter);
+
+            //volume = length * width * height
+            double volume = length * height * width;
+            System.out.printf("The volume if the room is %.2f", volume);
+
 
         }
         catch(InputMismatchException e) {
