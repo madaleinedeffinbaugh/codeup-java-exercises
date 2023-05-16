@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class MethodsExercises {
+    public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        //#1
 //        System.out.println("ADD:");
 //        System.out.println(addNums(5,6));
 //        System.out.println(addNums(4,10));
@@ -24,13 +26,18 @@ public class MethodsExercises {
 //        System.out.println(getRemainder(25,4));
 //        System.out.println(getRemainder(3,2));
 
-        System.out.println("Enter a number between 1 and 10: ");
-        int userInput = getInteger(1, 10);
-        System.out.printf("Your correct input: %d%n%n", userInput);
+        //#2
+//        System.out.println("Enter a number between 1 and 10: ");
+//        int userInput = getInteger(1, 10);
+//        System.out.printf("Your correct input: %d%n%n", userInput);
+//
+//        System.out.println("Enter a number between 23 and 48: ");
+//        int userInput2 = getInteger(23, 48);
+//        System.out.printf("Your correct input: %d", userInput2);
 
-        System.out.println("Enter a number between 23 and 48: ");
-        int userInput2 = getInteger(23, 48);
-        System.out.printf("Your correct input: %d", userInput2);
+        factorialPrompt();
+
+
 
     }
 
@@ -75,14 +82,48 @@ public class MethodsExercises {
     }
 
     public static int getInteger(int min, int max) {
-       Scanner scanner = new Scanner(System.in);
-       int userIn = scanner.nextInt();
+       int userIn = Integer.parseInt(scanner.nextLine());
        if(userIn < min || userIn > max) {
            System.out.println("Number was not in range, try again:");
            return getInteger(min, max);
        } else {
            return userIn;
        }
+
+    }
+
+    public static void factorialPrompt() {
+        System.out.println("Please enter a number 1-10");
+        int userInput = getInteger(1,10);
+        System.out.printf("!%d = %s = %d%n", userInput, factorialDisplay(userInput), factorial(userInput));
+        System.out.println("\nDo you want to continue? y/n");
+        String userConfirm = scanner.nextLine();
+        while (!userConfirm.equalsIgnoreCase("y") && !userConfirm.equalsIgnoreCase("n")) {
+            System.out.println("Invalid choice");
+            System.out.println("Do you want to continue? y/n");
+            userConfirm = scanner.nextLine();
+        }
+        if(userConfirm.equalsIgnoreCase("y")) {
+            factorialPrompt();
+        } else {
+            System.out.println("Quiting...");
+        }
+    }
+
+    public static String factorialDisplay(int x) {
+        String result = "";
+        if(x - 1 == 0) {
+            return result + x;
+        } else {
+            return String.format("%s x %d", factorialDisplay(x-1), x);
+        }
+    }
+    public static int factorial(int x) {
+        if(x - 1 == 0) {
+           return x;
+        } else {
+            return x * factorial(x -1);
+        }
 
     }
 
