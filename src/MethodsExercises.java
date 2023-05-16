@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -35,20 +36,22 @@ public class MethodsExercises {
 //        int userInput2 = getInteger(23, 48);
 //        System.out.printf("Your correct input: %d", userInput2);
 
-        factorialPrompt();
+        //#3
+//        factorialPrompt();
+
+rollDice();
 
 
 
     }
 
+    //maths
     public static double addNums(double numOne, double numTwo) {
         return numOne + numTwo;
     }
-
     public static double subtractNums(double numOne, double numTwo) {
         return numOne - numTwo;
     }
-
     //second attempt, the first one is at the bottoms
     public static double multiplyNums(double x, double y) {
         if(x < 0 && y < 0) {
@@ -69,18 +72,17 @@ public class MethodsExercises {
 
         }
     }
-
     public static double divideNums(double numOne, double numTwo) {
         if (numTwo == 0) {
             return 0;
         }
         return numOne / numTwo;
     }
-
     public static double getRemainder(double numOne, double numTwo) {
         return numOne % numTwo;
     }
 
+    //get int in specific range
     public static int getInteger(int min, int max) {
        int userIn = Integer.parseInt(scanner.nextLine());
        if(userIn < min || userIn > max) {
@@ -92,6 +94,7 @@ public class MethodsExercises {
 
     }
 
+    //factorial methods
     public static void factorialPrompt() {
         System.out.println("Please enter a number 1-10");
         int userInput = getInteger(1,10);
@@ -109,7 +112,6 @@ public class MethodsExercises {
             System.out.println("Quiting...");
         }
     }
-
     public static String factorialDisplay(int x) {
         String result = "";
         if(x - 1 == 0) {
@@ -124,6 +126,31 @@ public class MethodsExercises {
         } else {
             return x * factorial(x -1);
         }
+
+    }
+
+    //dice rolling
+    public static void rollDice() {
+        System.out.println("Please enter a number of sides for the dice");
+        int numSides = scanner.nextInt();
+        Random random = new Random();
+        int rand_int1 = random.nextInt(numSides)+1;
+        int rand_int2 = random.nextInt(numSides) +1;
+        System.out.printf("Dice 1: %d, Dice 2: %d", rand_int1, rand_int2);
+        scanner.nextLine();
+        System.out.println("\nDo you want to play again? y/n");
+        String userConfirm = scanner.nextLine();
+        while (!userConfirm.equalsIgnoreCase("y") && !userConfirm.equalsIgnoreCase("n")) {
+            System.out.println("Invalid choice");
+            System.out.println("Do you want to play again? y/n");
+            userConfirm = scanner.nextLine();
+        }
+        if(userConfirm.equalsIgnoreCase("y")) {
+            rollDice();
+        } else {
+            System.out.println("Quiting...");
+        }
+
 
     }
 
