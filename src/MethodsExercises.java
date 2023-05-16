@@ -1,26 +1,36 @@
+import java.util.Scanner;
+
 public class MethodsExercises {
     public static void main(String[] args) {
-        System.out.println("ADD:");
-        System.out.println(addNums(5,6));
-        System.out.println(addNums(4,10));
-        System.out.println("SUBTRACT:");
-        System.out.println(subtractNums(10,3));
-        System.out.println(subtractNums(7,12));
-        System.out.println("MULTIPLY:");
-        System.out.println(multiplyNums(5,5));
-        System.out.println(multiplyNums(3,4));
-        System.out.println(multiplyNums(5,0));
-        System.out.println(multiplyNums(5,-5));
-        System.out.println(multiplyNums(-3,4));
-        System.out.println(multiplyNums(5,0));
-        System.out.println("DIVIDE NUMS:");
-        System.out.println(divideNums(12,3));
-        System.out.println(divideNums(100,3));
-        System.out.println(divideNums(3,0));
-        System.out.println(divideNums(0,10));
-        System.out.println("GET REMAINDER:");
-        System.out.println(getRemainder(25,4));
-        System.out.println(getRemainder(3,2));
+//        System.out.println("ADD:");
+//        System.out.println(addNums(5,6));
+//        System.out.println(addNums(4,10));
+//        System.out.println("SUBTRACT:");
+//        System.out.println(subtractNums(10,3));
+//        System.out.println(subtractNums(7,12));
+//        System.out.println("MULTIPLY:");
+//        System.out.println(multiplyNums(5,5));
+//        System.out.println(multiplyNums(3,4));
+//        System.out.println(multiplyNums(5,0));
+//        System.out.println(multiplyNums(5,-5));
+//        System.out.println(multiplyNums(-3,4));
+//        System.out.println(multiplyNums(5,0));
+//        System.out.println("DIVIDE NUMS:");
+//        System.out.println(divideNums(12,3));
+//        System.out.println(divideNums(100,3));
+//        System.out.println(divideNums(3,0));
+//        System.out.println(divideNums(0,10));
+//        System.out.println("GET REMAINDER:");
+//        System.out.println(getRemainder(25,4));
+//        System.out.println(getRemainder(3,2));
+
+        System.out.println("Enter a number between 1 and 10: ");
+        int userInput = getInteger(1, 10);
+        System.out.printf("Your correct input: %d%n%n", userInput);
+
+        System.out.println("Enter a number between 23 and 48: ");
+        int userInput2 = getInteger(23, 48);
+        System.out.printf("Your correct input: %d", userInput2);
 
     }
 
@@ -62,6 +72,18 @@ public class MethodsExercises {
 
     public static double getRemainder(double numOne, double numTwo) {
         return numOne % numTwo;
+    }
+
+    public static int getInteger(int min, int max) {
+       Scanner scanner = new Scanner(System.in);
+       int userIn = scanner.nextInt();
+       if(userIn < min || userIn > max) {
+           System.out.println("Number was not in range, try again:");
+           return getInteger(min, max);
+       } else {
+           return userIn;
+       }
+
     }
 
 
