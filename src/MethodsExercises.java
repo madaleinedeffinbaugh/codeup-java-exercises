@@ -37,9 +37,10 @@ public class MethodsExercises {
 //        System.out.printf("Your correct input: %d", userInput2);
 
         //#3
-//        factorialPrompt();
+        factorialPrompt();
 
-rollDice();
+        //4
+//          rollDice();
 
 
 
@@ -96,8 +97,8 @@ rollDice();
 
     //factorial methods
     public static void factorialPrompt() {
-        System.out.println("Please enter a number 1-10");
-        int userInput = getInteger(1,10);
+        System.out.println("Please enter a number 1-12");
+        int userInput = getInteger(1,12);
         System.out.printf("!%d = %s = %d%n", userInput, factorialDisplay(userInput), factorial(userInput));
         System.out.println("\nDo you want to continue? y/n");
         String userConfirm = scanner.nextLine();
