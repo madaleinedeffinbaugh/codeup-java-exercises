@@ -25,7 +25,7 @@ public class InputTest {
 
         System.out.println(testingClass.getString("Please enter a string: "));
 
-        System.out.println( testingClass.yesNo("Please enter a y or yes: "));
+        System.out.println(testingClass.yesNo("Please enter a y or yes: "));
 
         System.out.println(testingClass.getInt(4,23,"Please enter a value between 4 and 23: "));
 
