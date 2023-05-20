@@ -43,16 +43,16 @@ public class Input {
 
 
     String getString(String prompt) {
-        System.out.println("Please enter a string: ");
+        System.out.println(prompt);
         return scanner.nextLine();
     }
     boolean yesNo(String prompt) {
-        System.out.println("Please enter a y or yes: ");
+        System.out.println(prompt);
         String userIn = scanner.nextLine();
         return userIn.equalsIgnoreCase("y") || userIn.equalsIgnoreCase("yes");
     }
     int getInt(int min, int max,String prompt) {
-        System.out.println("Please enter a value between " + min + " and " + max + ": ");
+        System.out.println(prompt);
         int userIn = Integer.parseInt(scanner.nextLine());
         while (userIn < min || userIn > max) {
             System.out.println("Number was not in range, try again:");
@@ -61,11 +61,11 @@ public class Input {
         return userIn;
     }
     int getInt(String prompt) {
-        System.out.println("Please enter an integer: ");
+        System.out.println(prompt);
         return Integer.parseInt(scanner.nextLine());
     }
     double getDouble(double min, double max,String prompt) {
-        System.out.println("Please enter a value between " + min + " and " + max + ": ");
+        System.out.println(prompt);
         int userIn = Integer.parseInt(scanner.nextLine());
         while (userIn < min || userIn > max) {
             System.out.println("Number was not in range, try again:");
@@ -74,7 +74,7 @@ public class Input {
         return userIn;
     }
     double getDouble(String prompt) {
-        System.out.println("Please enter a double:");
+        System.out.println(prompt);
         return Double.parseDouble(scanner.nextLine());
     }
 }
