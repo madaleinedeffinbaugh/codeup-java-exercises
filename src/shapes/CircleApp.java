@@ -12,6 +12,7 @@ public class CircleApp {
         System.out.printf("The area of your circle is %.2f%n", userCircle.getArea());
         System.out.printf("The circumference of your circle is %.2f%n", userCircle.getCircumference());
 
+
     }
 
 }

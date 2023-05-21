@@ -18,4 +18,8 @@ public class Circle {
     public static void addCircle() {
         circles += 1;
     }
+
+    public static int getCircles() {
+        return circles;
+    }
 }
