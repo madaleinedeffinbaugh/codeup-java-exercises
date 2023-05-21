@@ -6,7 +6,7 @@ public class Input {
 
     private Scanner scanner;
 
-    Input() {
+    public Input() {
         scanner = new Scanner(System.in);
     }
 
@@ -41,7 +41,7 @@ public class Input {
         return userIn;
     }
 
-    double getDouble() {
+    public double getDouble() {
         return Double.parseDouble(scanner.nextLine());
     }
 
@@ -101,7 +101,7 @@ public class Input {
         }
     }
 
-    double getDouble(String prompt) {
+    public double getDouble(String prompt) {
         System.out.println(prompt);
         try {
             return Double.parseDouble(scanner.nextLine());
