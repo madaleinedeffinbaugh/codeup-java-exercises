@@ -52,7 +52,7 @@ public class Input {
         return scanner.nextLine();
     }
 
-    boolean yesNo(String prompt) {
+    public boolean yesNo(String prompt) {
         System.out.println(prompt);
         String userIn = scanner.nextLine();
         return userIn.equalsIgnoreCase("y") || userIn.equalsIgnoreCase("yes");
