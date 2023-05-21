@@ -23,17 +23,17 @@ public class InputTest {
 //        System.out.println("Enter a Double: ");
 //        System.out.println(testingClass.getDouble());
 
-        System.out.println(testingClass.getString("Please enter a string: "));
+        System.out.println("You entered: " + testingClass.getString("Please enter a string: "));
 
-        System.out.println(testingClass.yesNo("Please enter a y or yes: "));
+        System.out.println("The result is: " + testingClass.yesNo("Please enter a y or yes: "));
 
-        System.out.println(testingClass.getInt(4,23,"Please enter a value between 4 and 23: "));
+        System.out.println("Your chosen value: " + testingClass.getInt(4,23,"Please enter a value between 4 and 23: "));
 
-        System.out.println(testingClass.getInt("Please enter an integer: "));
+        System.out.println("Your chosen value: " + testingClass.getInt("Please enter an integer: "));
 
-        System.out.println(testingClass.getDouble(3.9, 4.6, "Please enter a value between 3.9 and 4.6: "));
+        System.out.println("Your chosen value: " + testingClass.getDouble(3.9, 4.6, "Please enter a value between 3.9 and 4.6: "));
 
-        System.out.println(testingClass.getDouble("Please enter a double:"));
+        System.out.println("Your chosen value: " + testingClass.getDouble("Please enter a double:"));
 
     }
 }
