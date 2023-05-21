@@ -60,9 +60,8 @@ public class Input {
 
     int getInt(int min, int max, String prompt) {
         System.out.println(prompt);
-        int userIn = 0;
         try {
-            userIn = Integer.parseInt(scanner.nextLine());
+            int userIn = Integer.parseInt(scanner.nextLine());
             while (userIn < min || userIn > max) {
                 System.out.println("Number was not in range, try again:");
 
@@ -70,7 +69,7 @@ public class Input {
             }
             return userIn;
         } catch (Exception e) {
-            System.out.println("That was not a number.");
+            System.out.println("That was not an integer.");
             return getInt(min, max, prompt);
         }
 
@@ -78,12 +77,10 @@ public class Input {
 
     int getInt(String prompt) {
         System.out.println(prompt);
-        int userInt = 0;
         try {
-            userInt = Integer.parseInt(scanner.nextLine());
-            return userInt;
+            return Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
-            System.out.println("That was not a number.");
+            System.out.println("That was not an integer.");
             return getInt(prompt);
         }
     }
