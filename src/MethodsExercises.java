@@ -125,7 +125,7 @@ public class MethodsExercises {
             return String.format("%s x %d", factorialDisplay(x-1), x);
         }
     }
-    public static int factorial(int x) {
+    public static long factorial(int x) {
         if(x - 1 == 0) {
            return x;
         } else {
