@@ -2,17 +2,27 @@ package movies;
 
 import util.Input;
 
+import static movies.MoviesArray.findAll;
+
 public class MoviesApplication {
     private static final Input input = new Input();
 
     public static void main(String[] args) {
-        displayMenu();
-        int choice = input.getInt(0,5);
-        System.out.println(choice);
+
+        while (true) {
+            displayMenu();
+            int choice = input.getInt(0, 5);
+            if (choice == 0) {
+                break;
+            } else {
+                performSelection(choice);
+            }
+        }
+
 
     }
 
-    private static void displayMenu(){
+    private static void displayMenu() {
         System.out.println("What would you like to do?\n");
         System.out.println("0 - exit");
         System.out.println("1 - view all movies");
@@ -22,5 +32,33 @@ public class MoviesApplication {
         System.out.println("5 - view movies in the scifi category\n");
         System.out.print("Enter your choice: ");
 
+    }
+
+    public static void performSelection(int choice) {
+        switch (choice) {
+            case 1:
+                displayMovies("all");
+                break;
+            case 2:
+                displayMovies("animated");
+                break;
+            case 3:
+                displayMovies("drama");
+                break;
+            case 4:
+                displayMovies("horror");
+                break;
+            case 5:
+                displayMovies("scifi");
+                break;
+        }
+    }
+
+    public static void displayMovies(String cat) {
+        for (Movie movie : findAll()) {
+            if (movie.getCategory().equalsIgnoreCase(cat) || cat.equalsIgnoreCase("all")) {
+                System.out.println(movie.getName() + " -- " + movie.getCategory());
+            }
+        }
     }
 }
