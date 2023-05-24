@@ -19,13 +19,19 @@ public class Input {
         return userIn.equalsIgnoreCase("y") || userIn.equalsIgnoreCase("yes");
     }
 
-    int getInt(int min, int max) {
-        int userIn = Integer.parseInt(scanner.nextLine());
-        while (userIn < min || userIn > max) {
-            System.out.println("Number was not in range, try again:");
-            userIn = Integer.parseInt(scanner.nextLine());
+    public int getInt(int min, int max) {
+        try {
+            int userIn = Integer.parseInt(scanner.nextLine());
+            while (userIn < min || userIn > max) {
+                System.out.println("Number was not in range, try again:");
+
+                userIn = Integer.parseInt(scanner.nextLine());
+            }
+            return userIn;
+        } catch (Exception e) {
+            System.out.println("That was not an integer.");
+            return getInt(min, max);
         }
-        return userIn;
     }
 
     int getInt() {
@@ -58,7 +64,7 @@ public class Input {
         return userIn.equalsIgnoreCase("y") || userIn.equalsIgnoreCase("yes");
     }
 
-    int getInt(int min, int max, String prompt) {
+    public int getInt(int min, int max, String prompt) {
         System.out.println(prompt);
         try {
             int userIn = Integer.parseInt(scanner.nextLine());
