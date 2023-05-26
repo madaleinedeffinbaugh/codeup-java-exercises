@@ -7,13 +7,11 @@ public class Rectangle extends Quadrilateral implements Measurable{
 
     @Override
     public double getPerimeter() {
-        System.out.println("from rectangle");
         return (2 * length) + (2 * width);
     }
 
     @Override
     public double getArea() {
-        System.out.println("from rectangle");
         return length * width;
     }
 //
