@@ -36,21 +36,11 @@ public class MoviesApplication {
 
     public static void performSelection(int choice) {
         switch (choice) {
-            case 1:
-                displayMovies("all");
-                break;
-            case 2:
-                displayMovies("animated");
-                break;
-            case 3:
-                displayMovies("drama");
-                break;
-            case 4:
-                displayMovies("horror");
-                break;
-            case 5:
-                displayMovies("scifi");
-                break;
+            case 1 -> displayMovies("all");
+            case 2 -> displayMovies("animated");
+            case 3 -> displayMovies("drama");
+            case 4 -> displayMovies("horror");
+            case 5 -> displayMovies("scifi");
         }
     }
 
