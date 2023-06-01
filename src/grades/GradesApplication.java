@@ -16,14 +16,18 @@ public class GradesApplication {
         for(String username : usernames) {
             System.out.printf("|%s| ", username);
         }
-        System.out.println("\n\nWhat student would you like to see more information on?\n");
-        String userInput = input.getString();
-        if(students.containsKey(userInput)) {
-            students.get(userInput).printInfo(userInput);
-        } else {
-            System.out.printf("\n\nSorry, no student found with the GitHub username of \"&s\"", userInput);
-        }
-
+        System.out.println();
+        boolean userContinue = true;
+        do {
+            System.out.println("\nWhat student would you like to see more information on?\n");
+            String userInput = input.getString();
+            if (students.containsKey(userInput)) {
+                students.get(userInput).printInfo(userInput);
+            } else {
+                System.out.printf("\nSorry, no student found with the GitHub username of \"%s\"\n", userInput);
+            }
+            userContinue = input.yesNo("\nWould you like to see another student? y or yes to continue, anything else to stop.\n");
+        }while(userContinue);
 
 
     }
