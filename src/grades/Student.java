@@ -17,8 +17,8 @@ public class Student {
         return name;
     }
 
-    public void addGrade(Double grade) {
-        grades.add(grade);
+    public void addGrade(int grade) {
+        grades.add((double) grade);
     }
 
     public double getGradeAverage() {
