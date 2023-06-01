@@ -11,4 +11,21 @@ public class Student {
         this.name = name;
         grades = new ArrayList<>();
     }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void addGrade(Double grade) {
+        grades.add(grade);
+    }
+
+    public double getGradeAverage() {
+        Double sum = 0.0;
+        for(Double grade : grades) {
+            sum += grade;
+        }
+        return sum / grades.size();
+    }
 }
