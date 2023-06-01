@@ -10,11 +10,11 @@ public class Input {
         scanner = new Scanner(System.in);
     }
 
-    String getString() {
+    public String getString() {
         return scanner.nextLine();
     }
 
-    boolean yesNo() {
+    public boolean yesNo() {
         String userIn = scanner.nextLine();
         return userIn.equalsIgnoreCase("y") || userIn.equalsIgnoreCase("yes");
     }
@@ -34,11 +34,11 @@ public class Input {
         }
     }
 
-    int getInt() {
+    public int getInt() {
         return Integer.parseInt(scanner.nextLine());
     }
 
-    double getDouble(double min, double max) {
+    public double getDouble(double min, double max) {
         int userIn = Integer.parseInt(scanner.nextLine());
         while (userIn < min || userIn > max) {
             System.out.println("Number was not in range, try again:");
@@ -53,7 +53,7 @@ public class Input {
 
 
     //overloaded
-    String getString(String prompt) {
+    public String getString(String prompt) {
         System.out.println(prompt);
         return scanner.nextLine();
     }
@@ -81,7 +81,7 @@ public class Input {
 
     }
 
-    int getInt(String prompt) {
+    public int getInt(String prompt) {
         System.out.println(prompt);
         try {
             return Integer.parseInt(scanner.nextLine());
@@ -91,7 +91,7 @@ public class Input {
         }
     }
 
-    double getDouble(double min, double max, String prompt) {
+    public double getDouble(double min, double max, String prompt) {
         System.out.println(prompt);
         try {
             double userIn = Double.parseDouble(scanner.nextLine());

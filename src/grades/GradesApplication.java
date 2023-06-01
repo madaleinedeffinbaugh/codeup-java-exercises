@@ -1,11 +1,34 @@
 package grades;
 
+import util.Input;
+
 import java.util.HashMap;
+import java.util.Set;
 
 public class GradesApplication {
+    private static HashMap<String, Student> students = new HashMap<>();
     public static void main(String[] args) {
-        HashMap<String, Student> students = new HashMap<>();
+        createStudents();
+        Set<String> usernames = students.keySet();
+        Input input = new Input();
 
+        System.out.println("Welcome!\n\nHere are the GitHub usernames of our students:\n");
+        for(String username : usernames) {
+            System.out.printf("|%s| ", username);
+        }
+        System.out.println("\n\nWhat student would you like to see more information on?\n");
+        String userInput = input.getString();
+        if(students.containsKey(userInput)) {
+            students.get(userInput).printInfo(userInput);
+        } else {
+            System.out.printf("\n\nSorry, no student found with the GitHub username of \"&s\"", userInput);
+        }
+
+
+
+    }
+
+    public static void createStudents() {
         Student student1 = new Student("John");
         student1.addGrade(80);
         student1.addGrade(100);
@@ -30,7 +53,5 @@ public class GradesApplication {
         students.put("flying-saucer", student2);
         students.put("spinning-cat", student3);
         students.put("fluffy-dog", student4);
-
-
     }
 }

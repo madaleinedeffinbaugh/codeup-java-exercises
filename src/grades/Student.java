@@ -28,4 +28,8 @@ public class Student {
         }
         return sum / grades.size();
     }
+
+    public void printInfo(String username) {
+        System.out.println("\nName: " + name + " - " + "GitHub Username: " + username + "\nCurrent Average: " + getGradeAverage());
+    }
 }
