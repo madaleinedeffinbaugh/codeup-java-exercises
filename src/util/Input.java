@@ -20,35 +20,40 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        try {
-            int userIn = Integer.parseInt(scanner.nextLine());
+            int userIn = getInt();
             while (userIn < min || userIn > max) {
                 System.out.println("Number was not in range, try again:");
 
-                userIn = Integer.parseInt(scanner.nextLine());
+                userIn = getInt();
             }
             return userIn;
-        } catch (Exception e) {
-            System.out.println("That was not an integer.");
-            return getInt(min, max);
-        }
     }
 
     public int getInt() {
-        return Integer.parseInt(scanner.nextLine());
+        try {
+            return Integer.parseInt(getString());
+        } catch (Exception e) {
+            System.out.println("That was not an integer. Try again:");
+            return getInt();
+        }
     }
 
     public double getDouble(double min, double max) {
-        int userIn = Integer.parseInt(scanner.nextLine());
+        double userIn = getDouble();
         while (userIn < min || userIn > max) {
             System.out.println("Number was not in range, try again:");
-            userIn = Integer.parseInt(scanner.nextLine());
+            userIn = getDouble();
         }
         return userIn;
     }
 
     public double getDouble() {
-        return Double.parseDouble(scanner.nextLine());
+        try {
+            return Double.parseDouble(getString());
+        } catch (Exception e) {
+            System.out.println("That was not a double. Try again: ");
+            return getInt();
+        }
     }
 
 
@@ -66,54 +71,31 @@ public class Input {
 
     public int getInt(int min, int max, String prompt) {
         System.out.println(prompt);
-        try {
-            int userIn = Integer.parseInt(scanner.nextLine());
+            int userIn = getInt();
             while (userIn < min || userIn > max) {
                 System.out.println("Number was not in range, try again:");
-
-                userIn = Integer.parseInt(scanner.nextLine());
+                userIn = getInt();
             }
             return userIn;
-        } catch (Exception e) {
-            System.out.println("That was not an integer.");
-            return getInt(min, max, prompt);
-        }
-
     }
 
     public int getInt(String prompt) {
         System.out.println(prompt);
-        try {
-            return Integer.parseInt(scanner.nextLine());
-        } catch (Exception e) {
-            System.out.println("That was not an integer.");
-            return getInt(prompt);
-        }
+        return getInt();
     }
 
     public double getDouble(double min, double max, String prompt) {
         System.out.println(prompt);
-        try {
-            double userIn = Double.parseDouble(scanner.nextLine());
+            double userIn = getDouble();
             while (userIn < min || userIn > max) {
                 System.out.println("Number was not in range, try again:");
-
-                userIn = Double.parseDouble(scanner.nextLine());
+                userIn = getDouble();
             }
             return userIn;
-        } catch (Exception e) {
-            System.out.println("That was not a number.");
-            return getDouble(min, max, prompt);
-        }
     }
 
     public double getDouble(String prompt) {
         System.out.println(prompt);
-        try {
-            return Double.parseDouble(scanner.nextLine());
-        } catch (Exception e) {
-            System.out.println("That was not a number.");
-            return getDouble(prompt);
-        }
+        return getDouble();
     }
 }
