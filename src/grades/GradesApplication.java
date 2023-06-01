@@ -7,29 +7,14 @@ import java.util.Set;
 
 public class GradesApplication {
     private static HashMap<String, Student> students = new HashMap<>();
+    private static Input input = new Input();
     public static void main(String[] args) {
+
         createStudents();
         Set<String> usernames = students.keySet();
-        Input input = new Input();
 
-        System.out.println("Welcome!\n\nHere are the GitHub usernames of our students:\n");
-        for(String username : usernames) {
-            System.out.printf("|%s| ", username);
-        }
-        System.out.println();
-        boolean userContinue = true;
-        do {
-            System.out.println("\nWhat student would you like to see more information on?\n");
-            String userInput = input.getString();
-            if (students.containsKey(userInput)) {
-                students.get(userInput).printInfo(userInput);
-            } else {
-                System.out.printf("\nSorry, no student found with the GitHub username of \"%s\"\n", userInput);
-            }
-            userContinue = input.yesNo("\nWould you like to see another student? y or yes to continue, anything else to stop.\n");
-        }while(userContinue);
-
-
+        openingPrompt(usernames);
+        mainPrompt();
     }
 
     public static void createStudents() {
@@ -57,5 +42,27 @@ public class GradesApplication {
         students.put("flying-saucer", student2);
         students.put("spinning-cat", student3);
         students.put("fluffy-dog", student4);
+    }
+
+    public static void openingPrompt(Set<String> usernames) {
+        System.out.println("Welcome!\n\nHere are the GitHub usernames of our students:\n");
+        for(String username : usernames) {
+            System.out.printf("|%s| ", username);
+        }
+        System.out.println();
+    }
+
+    public static void mainPrompt(){
+        boolean userContinue = true;
+        do {
+            System.out.println("\nWhat student would you like to see more information on?\n");
+            String userInput = input.getString();
+            if (students.containsKey(userInput)) {
+                students.get(userInput).printInfo(userInput);
+            } else {
+                System.out.printf("\nSorry, no student found with the GitHub username of \"%s\"\n", userInput);
+            }
+            userContinue = input.yesNo("\nWould you like to see another student? y or yes to continue, anything else to stop.\n");
+        }while(userContinue);
     }
 }
